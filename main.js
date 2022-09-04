@@ -47,12 +47,12 @@ const renderPizza = () => {
         alert(' no existe la pizza sleccionada');
         return
     } else {
-
         info.innerHTML =
-            ` <h2 class="h2" id="h2">Nombre de la pizza: ${pizzaSearch(pizzas).nombre} </h2>
-              <h4 class="h4" id="h4">Precio: ${pizzaSearch(pizzas).precio}</h4> `
-
+            ` <h2 class="h2" id="h2">Nombre de la pizza:</h2>
+              <h2 class="h2"> <b class ="pizza">${pizzaSearch(pizzas).nombre}</b> <h2>  
+              <h4 class="h4" id="h4">Precio:<b class ="pizza">$${pizzaSearch(pizzas).precio} </b></h4> `
     }
+    number.value = '';
 }
 
 const pizzaSearch = (p) => {

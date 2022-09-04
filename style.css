@@ -8,30 +8,66 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: bisque;
 }
 
 .container {
     background-color: coral;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
     gap: 20px;
+    width: 50vw;
+    height: 50vh;
+}
+
+.titulo {
+    margin-top: 30px;
+}
+
+.info {
+    height: 25vh;
+    width: 25vw;
+    border: 1px black solid;
+}
+
+.form_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 180px;
 }
 
 .btn {
-    padding: 20px;
+    padding: 10px;
+    margin-top: 10px;
+    width: 25vw;
+    font-size: large;
+    background-color: chocolate;
+    color: white;
 }
 
 .inp {
-    padding: 20px;
+    padding: 10px;
     font-size: 1.2rem;
+    margin-top: 10px;
 }
 
 .h2 {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .h4 {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.pizza {
+    font-size: 2.4rem;
+    color: azure;
 }
