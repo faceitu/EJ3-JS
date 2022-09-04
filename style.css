@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: coral;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.btn {
+    padding: 20px;
+}
+
+.inp {
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+.h2 {
+    font-size: 1.2rem;
+}
+
+.h4 {
+    font-size: 1.2rem;
+}
