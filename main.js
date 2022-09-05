@@ -3,8 +3,15 @@ const h4 = document.getElementById('h4');
 const btn = document.getElementById('btn');
 const number = document.getElementById('numero');
 const info = document.getElementById('info');
+const cantidadIngredientes = document.getElementById('cant_ing');
+const formPizza = document.getElementById('form_pizza');
+const ing = document.getElementById('ing');
+const nombrePizza = document.getElementById('nombre_pizza');
+const precioPizza = document.getElementById('precio');
+const allin = document.querySelectorAll('input[name="alling"]');
 
-const pizzas = [{
+
+let pizzas = [{
         id: 1,
         nombre: "Napolitana",
         ingredientes: ["salsa de Tomate", " Morron", "Queso"],
@@ -49,7 +56,7 @@ const renderPizza = () => {
     } else {
         info.innerHTML =
             ` <h2 class="h2" id="h2">Nombre de la pizza:</h2>
-              <h2 class="h2"> <b class ="pizza">${pizzaSearch(pizzas).nombre}</b> <h2>  
+              <h2 class="h2"><b class ="pizza" >${pizzaSearch(pizzas).nombre}</b> <h2>  
               <h4 class="h4" id="h4">Precio:<b class ="pizza">$${pizzaSearch(pizzas).precio} </b></h4> `
     }
     number.value = '';
@@ -65,9 +72,48 @@ const getValue = () => {
     const valor = number.value
     return valor;
 }
+const agregarInputs = () => {
+    const ingrediente = document.createElement('input');
+    ingrediente.classList.add('inp');
+    ingrediente.name = "alling"
+    ingrediente.placeholder = 'Ingrediente';
+    ing.appendChild(ingrediente);
+
+}
+
+
+const addorLess = () => {
+
+
+    let cantidad = ing.childNodes.length - 1
+
+    if (cantidad <= cantidadIngredientes.value) {
+        agregarInputs()
+    } else {
+        const last = ing.lastChild;
+        ing.removeChild(last)
+    }
+
+
+}
+const savePizza = (e) => {
+    e.preventDefault();
+    pizzas = [...pizzas, {
+        id: pizzas.length + 1,
+        nombre: nombrePizza.value,
+        precio: precioPizza.value,
+        ingredientes: []
+
+    }]
+    console.log(allin)
+    console.log(pizzas)
+}
 
 const init = () => {
-    btn.addEventListener('click', renderPizza)
+    btn.addEventListener('click', renderPizza);
+
+    cantidadIngredientes.addEventListener('change', addorLess);
+    formPizza.addEventListener('submit', savePizza)
 
 }
 
